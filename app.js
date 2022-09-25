@@ -5,6 +5,10 @@ import update from './Routes/updateList.js'
 import getall from './Routes/getallList.js'
 import get from './Routes/getList.js'
 import dlt from './Routes/deleteList.js'
+import { config } from 'dotenv'
+config();
+
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -18,6 +22,6 @@ app.use('/',get);
 app.use('/getall',getall);
 app.use('/',dlt);
 
-app.listen(3000,()=>{
-    console.log("Litening on port 3000");
+app.listen(port,()=>{
+    console.log(`Litening on port ${port}`);
 })
